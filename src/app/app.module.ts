@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/app.header.component';
-import { SongComponent } from './song/app.song.component'
+import { SongComponent } from './song/app.song.component';
 
 @NgModule({
   declarations: [

@@ -1,24 +1,29 @@
-import { Component, ViewChild, ElementRef } from '@angular/core'
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
-  selector: 'song',
+  selector: 'app-song',
   templateUrl: './app.song.component.html',
   styleUrls: ['./app.song.component.less']
 })
-export class SongComponent {
+export class SongComponent implements AfterViewInit {
   @ViewChild('iconControl') icon: ElementRef;
 
+  active = false;
+
   articleClass = {
-    active: false
+    selected: false
   };
 
   constructor() {
-    this.articleClass.active = true;
+    // this.articleClass.active = true;
   }
 
   ngAfterViewInit() {
     console.log(this.icon.nativeElement);
   }
 
-
+   play() {
+     this.active = true;
+     this.articleClass.selected = true;
+   }
 }
