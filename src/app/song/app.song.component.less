@@ -1,0 +1,53 @@
+article {
+  height: 100px;
+  background-color: white;
+
+  &.active {
+    background-color: #e9edf8;
+    
+    section {
+      opacity: 1;
+
+      &.control {
+        i.icon-control {
+          color: #9bace7;
+        }
+      }
+
+    }
+  }
+}
+
+section {
+  height: 100%;
+  opacity: 0.65;
+
+  &.control {
+    width: 75px;
+    text-align: center;
+    float:left;
+
+    i.icon-control {
+      font-size: 1.20em;
+      margin-top: 40px;
+      color: #a2a5af;
+    }
+  }
+
+  &.info {
+    overflow:hidden;
+    color: #a2a5af;
+    padding: 28px 15px 0 0;
+
+    h3 {
+      font-size: 1.1em;
+      padding-bottom: 8px;
+    }
+
+    p {
+      font-size: 0.97em;
+      font-weight: 300;
+      color: #9bace7;
+    }
+  }
+}

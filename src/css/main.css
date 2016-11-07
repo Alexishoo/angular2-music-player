@@ -1,0 +1,8 @@
+/* General */
+body {
+  background-color: #3ec5ff;
+}
+@font-face {
+    font-family: MotionPicture;
+    src: url(/assets/fonts/MotionPicture_PersonalUseOnly.ttf);
+}

@@ -1,0 +1,14 @@
+header {
+  width: 100%;
+  background-color: #0088c5;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 3px 0 13px 0;
+}
+
+header h1.title {
+  font-family: MotionPicture;
+  color: #006fa3;
+  font-size: 3.2em;
+  text-align: center;
+}

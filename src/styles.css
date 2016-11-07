@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('css/reset.css');
+@import url('css/main.css');
+@import url('../node_modules/font-awesome/css/font-awesome.min.css');
+@import url('assets/css/font-awesome.css');
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+h1,h2,h3,h4,h5,
+p,span,label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
