@@ -1,9 +1,9 @@
 <article [ngClass]="articleClass">
   <section class="control">
-    <i #iconControl [ngClass] class="fa fa-play icon-control" aria-hidden="true"></i>
+    <i #iconControl [ngClass]="controlClass" class="fa icon-control" aria-hidden="true" (click)="changeState()"></i>
   </section>
   <section class="info">
-    <h3>Mind your business</h3>
-    <p>La Coka Nostra - Master Of The Dark Arts</p>
+    <h3>{{song.title}}</h3>
+    <p>{{song.description}}</p>
   </section>
 </article>

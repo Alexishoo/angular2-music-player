@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/app.header.component';
+import { SongListComponent } from './song-list/app.song.list.component';
 import { SongComponent } from './song/app.song.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    SongListComponent,
     SongComponent
   ],
   imports: [

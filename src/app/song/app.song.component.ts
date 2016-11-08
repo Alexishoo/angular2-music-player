@@ -1,29 +1,66 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { 
+  Component, 
+  ViewChild, 
+  ElementRef, 
+  OnInit,
+  Input
+} from '@angular/core';
+
+import { ISong } from './app.song.interface';
 
 @Component({
   selector: 'app-song',
   templateUrl: './app.song.component.html',
   styleUrls: ['./app.song.component.less']
 })
-export class SongComponent implements AfterViewInit {
+export class SongComponent implements OnInit {
+
+  @Input() song: ISong;
   @ViewChild('iconControl') icon: ElementRef;
 
   active = false;
 
   articleClass = {
-    selected: false
+    'selected': false
   };
 
+  controlClass = {
+    'fa-play': true,
+    'fa-pause': false
+  }
+
   constructor() {
-    // this.articleClass.active = true;
+    //this.play();
   }
 
-  ngAfterViewInit() {
-    console.log(this.icon.nativeElement);
+  ngOnInit() {
+    //console.log(this.icon.nativeElement);
+    //console.log('song', this.song);
   }
 
-   play() {
-     this.active = true;
-     this.articleClass.selected = true;
-   }
+  play() {
+    this.active = true;
+    this.articleClass.selected = true;
+    this.controlClass = {
+      'fa-play': false,
+      'fa-pause': true
+    }
+  }
+
+  stop() {
+    this.active = false;
+    this.articleClass.selected = false;
+    this.controlClass = {
+      'fa-play': true,
+      'fa-pause': false
+    }
+  }
+
+  changeState() {
+    if (this.active) {
+      this.stop();
+    }else{
+      this.play();
+    }
+  }
 }
