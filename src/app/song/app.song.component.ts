@@ -6,7 +6,7 @@ import {
   Input
 } from '@angular/core';
 
-import { ISong } from './app.song.interface';
+import { Song } from './app.song.model';
 
 @Component({
   selector: 'app-song',
@@ -15,7 +15,7 @@ import { ISong } from './app.song.interface';
 })
 export class SongComponent implements OnInit {
 
-  @Input() song: ISong;
+  @Input() song: Song;
   @ViewChild('iconControl') icon: ElementRef;
 
   active = false;

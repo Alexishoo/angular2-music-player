@@ -1,3 +1,4 @@
 <section>
-  <app-song *ngFor="let song of songs" [song]="song"></app-song>
+  <app-song *ngFor="let song of songListStore.songList | async" [song]="song"></app-song>
+  <button (click)="clickTest()">Papeh</button>
 </section>

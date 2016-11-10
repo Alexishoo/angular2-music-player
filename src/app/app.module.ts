@@ -8,6 +8,9 @@ import { HeaderComponent } from './header/app.header.component';
 import { SongListComponent } from './song-list/app.song.list.component';
 import { SongComponent } from './song/app.song.component';
 
+import { SongListService } from './song-list/app.song.list.service';
+import { SongListStore } from './song-list/app.song.list.store';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,10 @@ import { SongComponent } from './song/app.song.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    SongListService,
+    SongListStore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

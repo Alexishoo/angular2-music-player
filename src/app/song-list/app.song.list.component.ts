@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Song } from '../song/app.song.model';
+import { SongListStore } from './app.song.list.store';
 
 @Component({
   selector: 'app-song-list',
   templateUrl: './app.song.list.component.html',
   styleUrls: ['./app.song.list.component.less']
 })
-export class SongListComponent {
+export class SongListComponent implements OnInit{
 
-  songs = [{
-    title: 'Video test',
-    description: 'asdaoskhfdashdkjsah'
-  }, {
-    title: 'Video 2',
-    description: 'video de edgar'
-  }];
+  constructor(private songListStore: SongListStore) { }
 
-  constructor() {
-
+  ngOnInit() {
+    console.log(this.songListStore.songList);
   }
+
+  clickTest() {
+    console.log('click test add');
+    this.songListStore.addSong('https://www.youtube.com/watch?v=JRTSqjsvgcA');
+  }
+
 
 }
