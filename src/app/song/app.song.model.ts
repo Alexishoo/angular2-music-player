@@ -1,7 +1,7 @@
 import {List,Record} from 'immutable';
 
 const SongRecord = Record({
-    id: undefined,
+    _id: undefined,
     title: '',
     url: '',
     thumbnail_url: ''
@@ -9,7 +9,7 @@ const SongRecord = Record({
 
 export class Song extends SongRecord {
 
-  id: number;
+  _id: number;
   title: string;
   description: string; 
   thumbnail_url: string;   

@@ -15,18 +15,22 @@ export class SongListService {
 
   constructor(private http:Http) { }
 
-  getAllSongs(): Observable<Song[]> {
+  private _createPostObservable(url:String, data?:Object): Observable<any> {
     return this.http
-      .post(this.ENDPOINT + '/song/getAll', {})
+      .post(this.ENDPOINT + url, data ? data : {})
       .map( (res:Response) => res.json() )
       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
   }
 
-  addSong(url: String): Observable<any> {
-    return this.http
-      .post(this.ENDPOINT + '/song/add', {url})
-      .map( (res:Response) => res.json() )
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  getAllSongs(): Observable<Song[]> {
+    return this._createPostObservable('/song/getAll');
+  }
 
+  addSong(url: String): Observable<Song> {
+    return this._createPostObservable('/song/add', {url});
+  }
+
+  deleteSong(_id: number): Observable<any> {
+    return this._createPostObservable('/song/delete', { _id });
   }
 }

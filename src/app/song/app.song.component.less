@@ -33,14 +33,34 @@ section {
     }
   }
 
+  &.delete {
+    width: 75px;
+    text-align: center;
+    float:right;
+    opacity: 1;
+
+    i.icon-control {
+      font-size: 1.20em;
+      margin-top: 40px;
+      color: #a2a5af;
+    }
+  }
+
   &.info {
     overflow:hidden;
     color: #a2a5af;
-    padding: 27px 15px 0 0;
+    padding-top: 27px;
+    width: 400px;
+    display: inline-block;
 
     h3 {
       font-size: 1.1em;
       padding-bottom: 6px;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
       -webkit-user-select: none; /* Chrome/Safari */        
       -moz-user-select: none; /* Firefox */
       -ms-user-select: none; /* IE10+ */

@@ -3,7 +3,9 @@ import {
   ViewChild, 
   ElementRef, 
   OnInit,
-  Input
+  Input,
+  Output,
+  EventEmitter
 } from '@angular/core';
 
 import { Song } from './app.song.model';
@@ -16,6 +18,8 @@ import { Song } from './app.song.model';
 export class SongComponent implements OnInit {
 
   @Input() song: Song;
+  @Input() index: number;
+  @Output() onDelete: EventEmitter<Object> = new EventEmitter<Object>();
   @ViewChild('iconControl') icon: ElementRef;
 
   active = false;
@@ -48,12 +52,23 @@ export class SongComponent implements OnInit {
   }
 
   stop() {
+    if (!this.active) {
+      return;
+    }
     this.active = false;
     this.articleClass.selected = false;
     this.controlClass = {
       'fa-play': true,
       'fa-pause': false
     }
+  }
+
+  delete() {
+    this.stop();
+    this.onDelete.emit({
+      index: this.index,
+      _id: this.song._id
+    });
   }
 
   changeState() {

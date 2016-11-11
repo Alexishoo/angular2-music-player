@@ -1,4 +1,4 @@
 <section>
-  <app-song *ngFor="let song of songListStore.songList | async" [song]="song"></app-song>
+  <app-song *ngFor="let i = index; let song of songListStore.songList | async" [song]="song" [index]="i" (onDelete)="onDelete($event)"></app-song>
   <button (click)="clickTest()">Papeh</button>
 </section>

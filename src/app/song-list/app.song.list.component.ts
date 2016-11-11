@@ -20,5 +20,9 @@ export class SongListComponent implements OnInit{
     this.songListStore.addSong('https://www.youtube.com/watch?v=JRTSqjsvgcA');
   }
 
+  onDelete(data:any):void {
+    this.songListStore.deleteSong(data.index, data._id);
+  }
+
 
 }

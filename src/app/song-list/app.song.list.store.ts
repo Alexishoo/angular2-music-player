@@ -29,6 +29,11 @@ export class SongListStore{
       .subscribe( (song: Song) => this._songList.next( this._songList.getValue().push(song) ));
   }
 
+  deleteSong(index: number, id: number) {
+    return this.songListService.deleteSong(id)
+      .subscribe( () => this._songList.next( this._songList.getValue().delete(index) ) )
+  }
+
   // El truco esta en el async del app.song.list.component.html
   get songList() {
     return this._songList;
